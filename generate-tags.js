@@ -1,6 +1,6 @@
 const fs = require("fs");
 const styled = require("styled-components").default;
-const cssProps = require("./css-props").default;
+const cssProps = require("./css-props");
 const camelCase = require("camelcase");
 
 const tags = Object.keys(styled);
@@ -16,7 +16,8 @@ const cssLogic = Object.values(cssProps).map((val, idx, arr) => {
 const tagNames = [];
 
 tags.forEach(tag => {
-  const tagName = tag.charAt(0).toUpperCase() + tag.substr(1);
+  const tagName = tag === "object" ? "Obj" : tag.charAt(0).toUpperCase() + tag.substr(1);
+
   tagNames.push(tagName);
 
   let fileContents = `
@@ -47,18 +48,18 @@ export default ${tagName};
 let fileContents = "";
 tagNames.forEach((tag, idx, arr) => {
   if (idx === 0) {
-    fileContents = fileContents + `import ${tag} from './components/${tag}'`;
+    fileContents = fileContents + `import ${tag} from './components/${tag}';`;
   } else if (idx === arr.length - 1) {
     fileContents =
       fileContents +
       `
-import ${tag} from './components/${tag}'
+import ${tag} from './components/${tag}';
 `;
   } else {
     fileContents =
       fileContents +
       `
-import ${tag} from './components/${tag}'`;
+import ${tag} from './components/${tag}';`;
   }
 });
 
@@ -67,19 +68,19 @@ tagNames.forEach((tag, idx, arr) => {
     fileContents =
       fileContents +
       `
-export default {
-  ${tag},`;
+export {
+    ${tag},`;
   } else if (idx === arr.length - 1) {
     fileContents =
       fileContents +
       `
-  ${tag}
-}`;
+    ${tag}
+};`;
   } else {
     fileContents =
       fileContents +
       `
-  ${tag},`;
+    ${tag},`;
   }
 });
 

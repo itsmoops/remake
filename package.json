@@ -7,7 +7,6 @@
     "css": "node ./generate-css-props",
     "tags": "node ./generate-tags",
     "clean": "rm -rf dist",
-    "test": "jest",
     "start": "NODE_ENV=development webpack-dev-server",
     "build": "npm run clean && NODE_ENV=production webpack"
   },
@@ -20,7 +19,9 @@
     "bootstrap",
     "grid",
     "styled-components",
-    "react"
+    "react",
+    "html",
+    "markup"
   ],
   "author": "Eric Moore",
   "license": "ISC",
@@ -34,12 +35,10 @@
   },
   "devDependencies": {
     "babel-loader": "^7.1.5",
-    "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "camelcase": "^5.0.0",
-    "jest": "^23.4.2",
     "just-css-properties": "^1.1.0",
     "react-dom": "^16.4.2",
     "webpack": "^4.16.5",

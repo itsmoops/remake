@@ -15,6 +15,7 @@ const FunctionalScript = styled.script`
     animation-play-state: ${props => props.animationPlayState};
     animation-timing-function: ${props => props.animationTimingFunction};
     backface-visibility: ${props => props.backfaceVisibility};
+    background: ${props => props.background};
     background-attachment: ${props => props.backgroundAttachment};
     background-blend-mode: ${props => props.backgroundBlendMode};
     background-clip: ${props => props.backgroundClip};

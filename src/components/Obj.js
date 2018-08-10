@@ -1,5 +1,5 @@
 
-const FunctionalObject = styled.object`
+const FunctionalObj = styled.object`
     accelerator: ${props => props.accelerator};
     align-content: ${props => props.alignContent};
     align-items: ${props => props.alignItems};
@@ -15,6 +15,7 @@ const FunctionalObject = styled.object`
     animation-play-state: ${props => props.animationPlayState};
     animation-timing-function: ${props => props.animationTimingFunction};
     backface-visibility: ${props => props.backfaceVisibility};
+    background: ${props => props.background};
     background-attachment: ${props => props.backgroundAttachment};
     background-blend-mode: ${props => props.backgroundBlendMode};
     background-clip: ${props => props.backgroundClip};
@@ -268,13 +269,13 @@ const FunctionalObject = styled.object`
     zoom: ${props => props.zoom};
 `
 
-const Object = props => {
+const Obj = props => {
     return (
-        <FunctionalObject { ...props }>
+        <FunctionalObj { ...props }>
             {props.children}
-        </FunctionalObject>
+        </FunctionalObj>
     )
 }
 
-export default Object;
+export default Obj;
   

@@ -1,4 +1,4 @@
-export default [
+module.exports = [
   "accelerator",
   "align-content",
   "align-items",
@@ -14,6 +14,7 @@ export default [
   "animation-play-state",
   "animation-timing-function",
   "backface-visibility",
+  "background",
   "background-attachment",
   "background-blend-mode",
   "background-clip",
