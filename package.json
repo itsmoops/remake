@@ -1,14 +1,14 @@
 {
   "name": "revamp",
   "version": "1.0.0",
-  "description": "A layout library using native DOM elements and styled-components",
+  "description": "A layout library that combines HTML elements and styled-components",
   "main": "index.js",
   "scripts": {
     "css": "node ./generate-css-props",
     "tags": "node ./generate-tags",
     "clean": "rm -rf dist",
     "start": "NODE_ENV=development webpack-dev-server",
-    "build": "npm run clean && NODE_ENV=production webpack"
+    "build": "rm -rf dist && NODE_ENV=production webpack -p"
   },
   "repository": {
     "type": "git",
@@ -34,12 +34,13 @@
     "styled-components": "^3.4.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "camelcase": "^5.0.0",
-    "just-css-properties": "^1.1.0",
+    "known-css-properties": "^0.6.1",
     "react-dom": "^16.4.2",
     "webpack": "^4.16.5",
     "webpack-cli": "^3.1.0",

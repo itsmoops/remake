@@ -1,7 +1,7 @@
-const cssProps = require("just-css-properties");
+const cssProps = require("known-css-properties").all;
 const fs = require("fs");
 
-const props = `export default [${[
+const props = `module.exports = [${[
   Object.values(cssProps).map(val => {
     return "'" + val.toString() + "'";
   })

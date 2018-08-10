@@ -23,13 +23,6 @@ const config = {
       }
     ]
   },
-  plugins: [
-    new webpack.ProvidePlugin({
-      React: "react",
-      styled: ["styled-components", "default"],
-      css: ["styled-components", "css"]
-    })
-  ],
   resolve: {
     extensions: [".js"]
   }

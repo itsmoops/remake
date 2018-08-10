@@ -5,12 +5,22 @@ const camelCase = require("camelcase");
 
 const tags = Object.keys(styled);
 
-const cssLogic = Object.values(cssProps).map((val, idx, arr) => {
-  if (idx === arr.length - 1) {
-    return `${val}: \${props => props.${camelCase(val)}};`;
-  }
-  return `${val}: \${props => props.${camelCase(val)}};
+let styleProps = `export function getStyleProps(props) {
+  return \`${Object.values(cssProps).map((val, idx, arr) => {
+    if (idx === arr.length - 1) {
+      return `${val}: \${props.${camelCase(val)}};`;
+    }
+    return `${val}: \${props.${camelCase(val)}};
     `;
+  })}\`
+}`;
+
+styleProps = styleProps.replace(/,/g, "");
+
+fs.writeFile(`${__dirname}/src/helpers/helpers.js`, styleProps, err => {
+  if (err) {
+    return console.log(err);
+  }
 });
 
 const tagNames = [];
@@ -21,9 +31,13 @@ tags.forEach(tag => {
   tagNames.push(tagName);
 
   let fileContents = `
+import React from 'react';
+import styled from 'styled-components';
+import { getStyleProps } from '../helpers/helpers';
+
 const Functional${tagName} = styled.${tag}\`
-    ${[cssLogic]}
-\`
+    \${props => getStyleProps(props)}
+\`;
 
 const ${tagName} = props => {
     return (
@@ -31,12 +45,10 @@ const ${tagName} = props => {
             {props.children}
         </Functional${tagName}>
     )
-}
+};
 
 export default ${tagName};
   `;
-
-  fileContents = fileContents.replace(/,/g, "");
 
   fs.writeFile(`${__dirname}/src/components/${tagName}.js`, fileContents, err => {
     if (err) {
