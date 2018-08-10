@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/helpers';
+import { getStyleProps } from '../helpers/style-props';
 
 const FunctionalB = styled.b`
     ${props => getStyleProps(props)}
@@ -16,4 +16,3 @@ const B = props => {
 };
 
 export default B;
-  

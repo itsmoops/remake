@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/helpers';
+import { getStyleProps } from '../helpers/style-props';
 
 const FunctionalStop = styled.stop`
     ${props => getStyleProps(props)}
@@ -16,4 +16,3 @@ const Stop = props => {
 };
 
 export default Stop;
-  

@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/helpers';
+import { getStyleProps } from '../helpers/style-props';
 
 const FunctionalSvg = styled.svg`
     ${props => getStyleProps(props)}
@@ -16,4 +16,3 @@ const Svg = props => {
 };
 
 export default Svg;
-  

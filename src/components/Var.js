@@ -1,7 +1,7 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/helpers';
+import { getStyleProps } from '../helpers/style-props';
 
 const FunctionalVar = styled.var`
     ${props => getStyleProps(props)}
@@ -16,4 +16,3 @@ const Var = props => {
 };
 
 export default Var;
-  

@@ -6,18 +6,20 @@ const camelCase = require("camelcase");
 const tags = Object.keys(styled);
 
 let styleProps = `export function getStyleProps(props) {
-  return \`${Object.values(cssProps).map((val, idx, arr) => {
-    if (idx === arr.length - 1) {
-      return `${val}: \${props.${camelCase(val)}};`;
-    }
-    return `${val}: \${props.${camelCase(val)}};
-    `;
-  })}\`
+  return { 
+      ${Object.values(cssProps).map((val, idx, arr) => {
+      if (idx === arr.length - 1) {
+        return `"${val}": props.${camelCase(val)}`;
+      }
+      return `"${val}": props.${camelCase(val)},
+      `;
+    })}
+  }
 }`;
 
-styleProps = styleProps.replace(/,/g, "");
+styleProps = styleProps.replace(/,"/g, '"');
 
-fs.writeFile(`${__dirname}/src/helpers/helpers.js`, styleProps, err => {
+fs.writeFile(`${__dirname}/src/helpers/style-props.js`, styleProps, err => {
   if (err) {
     return console.log(err);
   }
@@ -30,10 +32,19 @@ tags.forEach(tag => {
 
   tagNames.push(tagName);
 
+  // let propTypes = cssProps.map((prop, idx, arr) => {
+  //   if (idx === 0) {
+  //     return `${camelCase(prop)}: PropTypes.string`
+  //   }  else {
+  //     return `
+  // ${camelCase(prop)}: PropTypes.string`
+  //   }
+  // });
+
   let fileContents = `
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/helpers';
+import { getStyleProps } from '../helpers/style-props';
 
 const Functional${tagName} = styled.${tag}\`
     \${props => getStyleProps(props)}
@@ -48,7 +59,11 @@ const ${tagName} = props => {
 };
 
 export default ${tagName};
-  `;
+`;
+
+// ${tagName}.propTypes = {
+//   ${propTypes}
+// }
 
   fs.writeFile(`${__dirname}/src/components/${tagName}.js`, fileContents, err => {
     if (err) {
