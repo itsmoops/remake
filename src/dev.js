@@ -5,7 +5,7 @@ import { Div, H1, P } from "./index";
 // Arrays can be used for responsive styles
 const styles = {
   color: ["white", "white", "black"],
-  background: ["blue", "red", "green", "orange", "yellow"],
+  backgroundColor: ["blue", "red", "green", "orange", "yellow"],
   height: "100%",
   width: ["100%", "70%", "50%", "35%", "20%"],
   padding: "20"
