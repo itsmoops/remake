@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTbody = styled.tbody`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Tbody = props => {
-    return (
-        <FunctionalTbody { ...props }>
-            {props.children}
-        </FunctionalTbody>
-    )
-};
+const Tbody = props => <FunctionalTbody { ...props }>{props.children}</FunctionalTbody>;
 
 export default Tbody;

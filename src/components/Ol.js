@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalOl = styled.ol`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Ol = props => {
-    return (
-        <FunctionalOl { ...props }>
-            {props.children}
-        </FunctionalOl>
-    )
-};
+const Ol = props => <FunctionalOl { ...props }>{props.children}</FunctionalOl>;
 
 export default Ol;

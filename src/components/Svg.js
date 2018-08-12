@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalSvg = styled.svg`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Svg = props => {
-    return (
-        <FunctionalSvg { ...props }>
-            {props.children}
-        </FunctionalSvg>
-    )
-};
+const Svg = props => <FunctionalSvg { ...props }>{props.children}</FunctionalSvg>;
 
 export default Svg;

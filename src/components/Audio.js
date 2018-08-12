@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalAudio = styled.audio`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Audio = props => {
-    return (
-        <FunctionalAudio { ...props }>
-            {props.children}
-        </FunctionalAudio>
-    )
-};
+const Audio = props => <FunctionalAudio { ...props }>{props.children}</FunctionalAudio>;
 
 export default Audio;

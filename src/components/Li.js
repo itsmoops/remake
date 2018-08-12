@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalLi = styled.li`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Li = props => {
-    return (
-        <FunctionalLi { ...props }>
-            {props.children}
-        </FunctionalLi>
-    )
-};
+const Li = props => <FunctionalLi { ...props }>{props.children}</FunctionalLi>;
 
 export default Li;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalMeter = styled.meter`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Meter = props => {
-    return (
-        <FunctionalMeter { ...props }>
-            {props.children}
-        </FunctionalMeter>
-    )
-};
+const Meter = props => <FunctionalMeter { ...props }>{props.children}</FunctionalMeter>;
 
 export default Meter;

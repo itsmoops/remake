@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalQ = styled.q`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Q = props => {
-    return (
-        <FunctionalQ { ...props }>
-            {props.children}
-        </FunctionalQ>
-    )
-};
+const Q = props => <FunctionalQ { ...props }>{props.children}</FunctionalQ>;
 
 export default Q;

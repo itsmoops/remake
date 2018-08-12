@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalSelect = styled.select`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Select = props => {
-    return (
-        <FunctionalSelect { ...props }>
-            {props.children}
-        </FunctionalSelect>
-    )
-};
+const Select = props => <FunctionalSelect { ...props }>{props.children}</FunctionalSelect>;
 
 export default Select;

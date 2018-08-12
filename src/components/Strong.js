@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalStrong = styled.strong`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Strong = props => {
-    return (
-        <FunctionalStrong { ...props }>
-            {props.children}
-        </FunctionalStrong>
-    )
-};
+const Strong = props => <FunctionalStrong { ...props }>{props.children}</FunctionalStrong>;
 
 export default Strong;

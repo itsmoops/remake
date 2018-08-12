@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalIns = styled.ins`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Ins = props => {
-    return (
-        <FunctionalIns { ...props }>
-            {props.children}
-        </FunctionalIns>
-    )
-};
+const Ins = props => <FunctionalIns { ...props }>{props.children}</FunctionalIns>;
 
 export default Ins;

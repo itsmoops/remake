@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTextarea = styled.textarea`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Textarea = props => {
-    return (
-        <FunctionalTextarea { ...props }>
-            {props.children}
-        </FunctionalTextarea>
-    )
-};
+const Textarea = props => <FunctionalTextarea { ...props }>{props.children}</FunctionalTextarea>;
 
 export default Textarea;

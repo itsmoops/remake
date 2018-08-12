@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalFigcaption = styled.figcaption`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Figcaption = props => {
-    return (
-        <FunctionalFigcaption { ...props }>
-            {props.children}
-        </FunctionalFigcaption>
-    )
-};
+const Figcaption = props => <FunctionalFigcaption { ...props }>{props.children}</FunctionalFigcaption>;
 
 export default Figcaption;

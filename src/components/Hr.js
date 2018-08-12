@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalHr = styled.hr`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Hr = props => {
-    return (
-        <FunctionalHr { ...props }>
-            {props.children}
-        </FunctionalHr>
-    )
-};
+const Hr = props => <FunctionalHr { ...props }>{props.children}</FunctionalHr>;
 
 export default Hr;

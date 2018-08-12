@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalDt = styled.dt`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Dt = props => {
-    return (
-        <FunctionalDt { ...props }>
-            {props.children}
-        </FunctionalDt>
-    )
-};
+const Dt = props => <FunctionalDt { ...props }>{props.children}</FunctionalDt>;
 
 export default Dt;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalProgress = styled.progress`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Progress = props => {
-    return (
-        <FunctionalProgress { ...props }>
-            {props.children}
-        </FunctionalProgress>
-    )
-};
+const Progress = props => <FunctionalProgress { ...props }>{props.children}</FunctionalProgress>;
 
 export default Progress;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalForm = styled.form`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Form = props => {
-    return (
-        <FunctionalForm { ...props }>
-            {props.children}
-        </FunctionalForm>
-    )
-};
+const Form = props => <FunctionalForm { ...props }>{props.children}</FunctionalForm>;
 
 export default Form;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalMain = styled.main`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Main = props => {
-    return (
-        <FunctionalMain { ...props }>
-            {props.children}
-        </FunctionalMain>
-    )
-};
+const Main = props => <FunctionalMain { ...props }>{props.children}</FunctionalMain>;
 
 export default Main;

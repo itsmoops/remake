@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalParam = styled.param`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Param = props => {
-    return (
-        <FunctionalParam { ...props }>
-            {props.children}
-        </FunctionalParam>
-    )
-};
+const Param = props => <FunctionalParam { ...props }>{props.children}</FunctionalParam>;
 
 export default Param;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalAside = styled.aside`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Aside = props => {
-    return (
-        <FunctionalAside { ...props }>
-            {props.children}
-        </FunctionalAside>
-    )
-};
+const Aside = props => <FunctionalAside { ...props }>{props.children}</FunctionalAside>;
 
 export default Aside;

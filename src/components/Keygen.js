@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalKeygen = styled.keygen`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Keygen = props => {
-    return (
-        <FunctionalKeygen { ...props }>
-            {props.children}
-        </FunctionalKeygen>
-    )
-};
+const Keygen = props => <FunctionalKeygen { ...props }>{props.children}</FunctionalKeygen>;
 
 export default Keygen;

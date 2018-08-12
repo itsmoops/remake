@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalEmbed = styled.embed`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Embed = props => {
-    return (
-        <FunctionalEmbed { ...props }>
-            {props.children}
-        </FunctionalEmbed>
-    )
-};
+const Embed = props => <FunctionalEmbed { ...props }>{props.children}</FunctionalEmbed>;
 
 export default Embed;

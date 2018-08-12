@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalLabel = styled.label`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Label = props => {
-    return (
-        <FunctionalLabel { ...props }>
-            {props.children}
-        </FunctionalLabel>
-    )
-};
+const Label = props => <FunctionalLabel { ...props }>{props.children}</FunctionalLabel>;
 
 export default Label;

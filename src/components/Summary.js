@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalSummary = styled.summary`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Summary = props => {
-    return (
-        <FunctionalSummary { ...props }>
-            {props.children}
-        </FunctionalSummary>
-    )
-};
+const Summary = props => <FunctionalSummary { ...props }>{props.children}</FunctionalSummary>;
 
 export default Summary;

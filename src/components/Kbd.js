@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalKbd = styled.kbd`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Kbd = props => {
-    return (
-        <FunctionalKbd { ...props }>
-            {props.children}
-        </FunctionalKbd>
-    )
-};
+const Kbd = props => <FunctionalKbd { ...props }>{props.children}</FunctionalKbd>;
 
 export default Kbd;

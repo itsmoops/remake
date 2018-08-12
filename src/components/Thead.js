@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalThead = styled.thead`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Thead = props => {
-    return (
-        <FunctionalThead { ...props }>
-            {props.children}
-        </FunctionalThead>
-    )
-};
+const Thead = props => <FunctionalThead { ...props }>{props.children}</FunctionalThead>;
 
 export default Thead;

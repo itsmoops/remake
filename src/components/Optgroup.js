@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalOptgroup = styled.optgroup`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Optgroup = props => {
-    return (
-        <FunctionalOptgroup { ...props }>
-            {props.children}
-        </FunctionalOptgroup>
-    )
-};
+const Optgroup = props => <FunctionalOptgroup { ...props }>{props.children}</FunctionalOptgroup>;
 
 export default Optgroup;

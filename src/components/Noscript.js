@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalNoscript = styled.noscript`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Noscript = props => {
-    return (
-        <FunctionalNoscript { ...props }>
-            {props.children}
-        </FunctionalNoscript>
-    )
-};
+const Noscript = props => <FunctionalNoscript { ...props }>{props.children}</FunctionalNoscript>;
 
 export default Noscript;

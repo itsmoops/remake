@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalSup = styled.sup`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Sup = props => {
-    return (
-        <FunctionalSup { ...props }>
-            {props.children}
-        </FunctionalSup>
-    )
-};
+const Sup = props => <FunctionalSup { ...props }>{props.children}</FunctionalSup>;
 
 export default Sup;

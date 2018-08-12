@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalArea = styled.area`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Area = props => {
-    return (
-        <FunctionalArea { ...props }>
-            {props.children}
-        </FunctionalArea>
-    )
-};
+const Area = props => <FunctionalArea { ...props }>{props.children}</FunctionalArea>;
 
 export default Area;

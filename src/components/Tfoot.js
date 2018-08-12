@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTfoot = styled.tfoot`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Tfoot = props => {
-    return (
-        <FunctionalTfoot { ...props }>
-            {props.children}
-        </FunctionalTfoot>
-    )
-};
+const Tfoot = props => <FunctionalTfoot { ...props }>{props.children}</FunctionalTfoot>;
 
 export default Tfoot;

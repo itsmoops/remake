@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalStop = styled.stop`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Stop = props => {
-    return (
-        <FunctionalStop { ...props }>
-            {props.children}
-        </FunctionalStop>
-    )
-};
+const Stop = props => <FunctionalStop { ...props }>{props.children}</FunctionalStop>;
 
 export default Stop;

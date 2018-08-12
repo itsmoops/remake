@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalCircle = styled.circle`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Circle = props => {
-    return (
-        <FunctionalCircle { ...props }>
-            {props.children}
-        </FunctionalCircle>
-    )
-};
+const Circle = props => <FunctionalCircle { ...props }>{props.children}</FunctionalCircle>;
 
 export default Circle;

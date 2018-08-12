@@ -22,19 +22,13 @@ tags.forEach(tag => {
   let fileContents = `
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const Functional${tagName} = styled.${tag}\`
-    \${props => getStyleProps(props)};
+    \${props => formatStyles(props)};
 \`;
 
-const ${tagName} = props => {
-    return (
-        <Functional${tagName} { ...props }>
-            {props.children}
-        </Functional${tagName}>
-    )
-};
+const ${tagName} = props => <Functional${tagName} { ...props }>{props.children}</Functional${tagName}>;
 
 export default ${tagName};
 `;

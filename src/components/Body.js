@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalBody = styled.body`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Body = props => {
-    return (
-        <FunctionalBody { ...props }>
-            {props.children}
-        </FunctionalBody>
-    )
-};
+const Body = props => <FunctionalBody { ...props }>{props.children}</FunctionalBody>;
 
 export default Body;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalOption = styled.option`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Option = props => {
-    return (
-        <FunctionalOption { ...props }>
-            {props.children}
-        </FunctionalOption>
-    )
-};
+const Option = props => <FunctionalOption { ...props }>{props.children}</FunctionalOption>;
 
 export default Option;

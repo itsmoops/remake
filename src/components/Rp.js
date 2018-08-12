@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalRp = styled.rp`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Rp = props => {
-    return (
-        <FunctionalRp { ...props }>
-            {props.children}
-        </FunctionalRp>
-    )
-};
+const Rp = props => <FunctionalRp { ...props }>{props.children}</FunctionalRp>;
 
 export default Rp;

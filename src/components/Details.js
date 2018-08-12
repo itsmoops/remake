@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalDetails = styled.details`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Details = props => {
-    return (
-        <FunctionalDetails { ...props }>
-            {props.children}
-        </FunctionalDetails>
-    )
-};
+const Details = props => <FunctionalDetails { ...props }>{props.children}</FunctionalDetails>;
 
 export default Details;

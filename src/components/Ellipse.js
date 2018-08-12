@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalEllipse = styled.ellipse`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Ellipse = props => {
-    return (
-        <FunctionalEllipse { ...props }>
-            {props.children}
-        </FunctionalEllipse>
-    )
-};
+const Ellipse = props => <FunctionalEllipse { ...props }>{props.children}</FunctionalEllipse>;
 
 export default Ellipse;

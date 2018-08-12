@@ -1,9 +1,9 @@
 import { injectGlobal } from "styled-components";
-import defaultStyles from "./helpers/default-styles";
+import globalStyles from "./helpers/global-styles";
 
 injectGlobal`
     body {
-        ${defaultStyles}
+        ${globalStyles}
     }
 `;
 

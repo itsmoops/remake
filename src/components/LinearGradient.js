@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalLinearGradient = styled.linearGradient`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const LinearGradient = props => {
-    return (
-        <FunctionalLinearGradient { ...props }>
-            {props.children}
-        </FunctionalLinearGradient>
-    )
-};
+const LinearGradient = props => <FunctionalLinearGradient { ...props }>{props.children}</FunctionalLinearGradient>;
 
 export default LinearGradient;

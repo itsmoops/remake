@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalDatalist = styled.datalist`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Datalist = props => {
-    return (
-        <FunctionalDatalist { ...props }>
-            {props.children}
-        </FunctionalDatalist>
-    )
-};
+const Datalist = props => <FunctionalDatalist { ...props }>{props.children}</FunctionalDatalist>;
 
 export default Datalist;

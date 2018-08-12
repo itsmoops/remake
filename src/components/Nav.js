@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalNav = styled.nav`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Nav = props => {
-    return (
-        <FunctionalNav { ...props }>
-            {props.children}
-        </FunctionalNav>
-    )
-};
+const Nav = props => <FunctionalNav { ...props }>{props.children}</FunctionalNav>;
 
 export default Nav;

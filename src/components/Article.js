@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalArticle = styled.article`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Article = props => {
-    return (
-        <FunctionalArticle { ...props }>
-            {props.children}
-        </FunctionalArticle>
-    )
-};
+const Article = props => <FunctionalArticle { ...props }>{props.children}</FunctionalArticle>;
 
 export default Article;

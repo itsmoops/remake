@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTd = styled.td`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Td = props => {
-    return (
-        <FunctionalTd { ...props }>
-            {props.children}
-        </FunctionalTd>
-    )
-};
+const Td = props => <FunctionalTd { ...props }>{props.children}</FunctionalTd>;
 
 export default Td;

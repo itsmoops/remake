@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalS = styled.s`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const S = props => {
-    return (
-        <FunctionalS { ...props }>
-            {props.children}
-        </FunctionalS>
-    )
-};
+const S = props => <FunctionalS { ...props }>{props.children}</FunctionalS>;
 
 export default S;

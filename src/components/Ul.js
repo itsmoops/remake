@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalUl = styled.ul`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Ul = props => {
-    return (
-        <FunctionalUl { ...props }>
-            {props.children}
-        </FunctionalUl>
-    )
-};
+const Ul = props => <FunctionalUl { ...props }>{props.children}</FunctionalUl>;
 
 export default Ul;

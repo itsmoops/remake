@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalVideo = styled.video`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Video = props => {
-    return (
-        <FunctionalVideo { ...props }>
-            {props.children}
-        </FunctionalVideo>
-    )
-};
+const Video = props => <FunctionalVideo { ...props }>{props.children}</FunctionalVideo>;
 
 export default Video;

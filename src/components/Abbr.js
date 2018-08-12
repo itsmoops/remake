@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalAbbr = styled.abbr`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Abbr = props => {
-    return (
-        <FunctionalAbbr { ...props }>
-            {props.children}
-        </FunctionalAbbr>
-    )
-};
+const Abbr = props => <FunctionalAbbr { ...props }>{props.children}</FunctionalAbbr>;
 
 export default Abbr;

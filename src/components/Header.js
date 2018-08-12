@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalHeader = styled.header`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Header = props => {
-    return (
-        <FunctionalHeader { ...props }>
-            {props.children}
-        </FunctionalHeader>
-    )
-};
+const Header = props => <FunctionalHeader { ...props }>{props.children}</FunctionalHeader>;
 
 export default Header;

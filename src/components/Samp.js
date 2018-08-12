@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalSamp = styled.samp`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Samp = props => {
-    return (
-        <FunctionalSamp { ...props }>
-            {props.children}
-        </FunctionalSamp>
-    )
-};
+const Samp = props => <FunctionalSamp { ...props }>{props.children}</FunctionalSamp>;
 
 export default Samp;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalPolyline = styled.polyline`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Polyline = props => {
-    return (
-        <FunctionalPolyline { ...props }>
-            {props.children}
-        </FunctionalPolyline>
-    )
-};
+const Polyline = props => <FunctionalPolyline { ...props }>{props.children}</FunctionalPolyline>;
 
 export default Polyline;

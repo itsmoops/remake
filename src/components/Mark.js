@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalMark = styled.mark`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Mark = props => {
-    return (
-        <FunctionalMark { ...props }>
-            {props.children}
-        </FunctionalMark>
-    )
-};
+const Mark = props => <FunctionalMark { ...props }>{props.children}</FunctionalMark>;
 
 export default Mark;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalFieldset = styled.fieldset`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Fieldset = props => {
-    return (
-        <FunctionalFieldset { ...props }>
-            {props.children}
-        </FunctionalFieldset>
-    )
-};
+const Fieldset = props => <FunctionalFieldset { ...props }>{props.children}</FunctionalFieldset>;
 
 export default Fieldset;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalForeignObject = styled.foreignObject`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const ForeignObject = props => {
-    return (
-        <FunctionalForeignObject { ...props }>
-            {props.children}
-        </FunctionalForeignObject>
-    )
-};
+const ForeignObject = props => <FunctionalForeignObject { ...props }>{props.children}</FunctionalForeignObject>;
 
 export default ForeignObject;

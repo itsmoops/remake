@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalEm = styled.em`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Em = props => {
-    return (
-        <FunctionalEm { ...props }>
-            {props.children}
-        </FunctionalEm>
-    )
-};
+const Em = props => <FunctionalEm { ...props }>{props.children}</FunctionalEm>;
 
 export default Em;

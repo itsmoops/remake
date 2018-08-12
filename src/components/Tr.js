@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTr = styled.tr`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Tr = props => {
-    return (
-        <FunctionalTr { ...props }>
-            {props.children}
-        </FunctionalTr>
-    )
-};
+const Tr = props => <FunctionalTr { ...props }>{props.children}</FunctionalTr>;
 
 export default Tr;

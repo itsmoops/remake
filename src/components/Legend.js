@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalLegend = styled.legend`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Legend = props => {
-    return (
-        <FunctionalLegend { ...props }>
-            {props.children}
-        </FunctionalLegend>
-    )
-};
+const Legend = props => <FunctionalLegend { ...props }>{props.children}</FunctionalLegend>;
 
 export default Legend;

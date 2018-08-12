@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalInput = styled.input`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Input = props => {
-    return (
-        <FunctionalInput { ...props }>
-            {props.children}
-        </FunctionalInput>
-    )
-};
+const Input = props => <FunctionalInput { ...props }>{props.children}</FunctionalInput>;
 
 export default Input;

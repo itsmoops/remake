@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalPolygon = styled.polygon`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Polygon = props => {
-    return (
-        <FunctionalPolygon { ...props }>
-            {props.children}
-        </FunctionalPolygon>
-    )
-};
+const Polygon = props => <FunctionalPolygon { ...props }>{props.children}</FunctionalPolygon>;
 
 export default Polygon;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalCol = styled.col`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Col = props => {
-    return (
-        <FunctionalCol { ...props }>
-            {props.children}
-        </FunctionalCol>
-    )
-};
+const Col = props => <FunctionalCol { ...props }>{props.children}</FunctionalCol>;
 
 export default Col;

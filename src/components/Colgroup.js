@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalColgroup = styled.colgroup`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Colgroup = props => {
-    return (
-        <FunctionalColgroup { ...props }>
-            {props.children}
-        </FunctionalColgroup>
-    )
-};
+const Colgroup = props => <FunctionalColgroup { ...props }>{props.children}</FunctionalColgroup>;
 
 export default Colgroup;

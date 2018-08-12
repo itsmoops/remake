@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTspan = styled.tspan`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Tspan = props => {
-    return (
-        <FunctionalTspan { ...props }>
-            {props.children}
-        </FunctionalTspan>
-    )
-};
+const Tspan = props => <FunctionalTspan { ...props }>{props.children}</FunctionalTspan>;
 
 export default Tspan;

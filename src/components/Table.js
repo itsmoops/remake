@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTable = styled.table`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Table = props => {
-    return (
-        <FunctionalTable { ...props }>
-            {props.children}
-        </FunctionalTable>
-    )
-};
+const Table = props => <FunctionalTable { ...props }>{props.children}</FunctionalTable>;
 
 export default Table;

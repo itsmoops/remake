@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalHgroup = styled.hgroup`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Hgroup = props => {
-    return (
-        <FunctionalHgroup { ...props }>
-            {props.children}
-        </FunctionalHgroup>
-    )
-};
+const Hgroup = props => <FunctionalHgroup { ...props }>{props.children}</FunctionalHgroup>;
 
 export default Hgroup;

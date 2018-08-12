@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalPre = styled.pre`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Pre = props => {
-    return (
-        <FunctionalPre { ...props }>
-            {props.children}
-        </FunctionalPre>
-    )
-};
+const Pre = props => <FunctionalPre { ...props }>{props.children}</FunctionalPre>;
 
 export default Pre;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalTitle = styled.title`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Title = props => {
-    return (
-        <FunctionalTitle { ...props }>
-            {props.children}
-        </FunctionalTitle>
-    )
-};
+const Title = props => <FunctionalTitle { ...props }>{props.children}</FunctionalTitle>;
 
 export default Title;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalDialog = styled.dialog`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Dialog = props => {
-    return (
-        <FunctionalDialog { ...props }>
-            {props.children}
-        </FunctionalDialog>
-    )
-};
+const Dialog = props => <FunctionalDialog { ...props }>{props.children}</FunctionalDialog>;
 
 export default Dialog;

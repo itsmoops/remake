@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalLine = styled.line`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Line = props => {
-    return (
-        <FunctionalLine { ...props }>
-            {props.children}
-        </FunctionalLine>
-    )
-};
+const Line = props => <FunctionalLine { ...props }>{props.children}</FunctionalLine>;
 
 export default Line;

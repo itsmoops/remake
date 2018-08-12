@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalButton = styled.button`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Button = props => {
-    return (
-        <FunctionalButton { ...props }>
-            {props.children}
-        </FunctionalButton>
-    )
-};
+const Button = props => <FunctionalButton { ...props }>{props.children}</FunctionalButton>;
 
 export default Button;

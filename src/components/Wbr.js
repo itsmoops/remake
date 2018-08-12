@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalWbr = styled.wbr`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Wbr = props => {
-    return (
-        <FunctionalWbr { ...props }>
-            {props.children}
-        </FunctionalWbr>
-    )
-};
+const Wbr = props => <FunctionalWbr { ...props }>{props.children}</FunctionalWbr>;
 
 export default Wbr;

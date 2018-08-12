@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalPicture = styled.picture`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Picture = props => {
-    return (
-        <FunctionalPicture { ...props }>
-            {props.children}
-        </FunctionalPicture>
-    )
-};
+const Picture = props => <FunctionalPicture { ...props }>{props.children}</FunctionalPicture>;
 
 export default Picture;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalHead = styled.head`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Head = props => {
-    return (
-        <FunctionalHead { ...props }>
-            {props.children}
-        </FunctionalHead>
-    )
-};
+const Head = props => <FunctionalHead { ...props }>{props.children}</FunctionalHead>;
 
 export default Head;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalH1 = styled.h1`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const H1 = props => {
-    return (
-        <FunctionalH1 { ...props }>
-            {props.children}
-        </FunctionalH1>
-    )
-};
+const H1 = props => <FunctionalH1 { ...props }>{props.children}</FunctionalH1>;
 
 export default H1;

@@ -1,18 +1,12 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { getStyleProps } from '../helpers/style-props';
+import { formatStyles } from '../helpers/helpers';
 
 const FunctionalBlockquote = styled.blockquote`
-    ${props => getStyleProps(props)}
+    ${props => formatStyles(props)};
 `;
 
-const Blockquote = props => {
-    return (
-        <FunctionalBlockquote { ...props }>
-            {props.children}
-        </FunctionalBlockquote>
-    )
-};
+const Blockquote = props => <FunctionalBlockquote { ...props }>{props.children}</FunctionalBlockquote>;
 
 export default Blockquote;
