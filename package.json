@@ -8,7 +8,7 @@
     "tags": "node ./generate-tags",
     "clean": "rm -rf dist",
     "start": "NODE_ENV=development webpack-dev-server",
-    "build": "rm -rf dist && NODE_ENV=production webpack -p"
+    "build": "rm -rf dist && NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -29,10 +29,6 @@
     "url": "https://github.com/itsmoops/revival-ui/issues"
   },
   "homepage": "https://github.com/itsmoops/revival-ui#readme",
-  "dependencies": {
-    "react": "^16.4.2",
-    "styled-components": "^3.4.2"
-  },
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
@@ -41,10 +37,16 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "camelcase": "^5.0.0",
+    "decamelize": "^2.0.0",
     "known-css-properties": "^0.6.1",
     "react-dom": "^16.4.2",
     "webpack": "^4.16.5",
+    "webpack-bundle-analyzer": "^3.0.3",
     "webpack-cli": "^3.1.0",
     "webpack-dev-server": "^3.1.5"
+  },
+  "peerDependencies": {
+    "react": "^16.4.2",
+    "styled-components": "^3.4.2"
   }
 }

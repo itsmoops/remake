@@ -1,4 +1,5 @@
 const path = require("path");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const isProd = process.env.NODE_ENV === "production";
 
@@ -9,7 +10,7 @@ const config = {
   output: {
     path: path.join(__dirname, "dist"),
     libraryTarget: "umd",
-    filename: "revival-ui.js"
+    filename:  isProd ? "revival-ui.js" : "revival-ui.js"
   },
   module: {
     rules: [
@@ -27,7 +28,15 @@ const config = {
   }
 };
 
-if (!isProd) {
+if (isProd) {
+  config.plugins = [
+    new BundleAnalyzerPlugin()
+  ]
+  config.externals = {
+    react: 'React',
+    'styled-components': 'styled'
+  }
+} else {
   config.devServer = {
     contentBase: path.join(__dirname, "src")
   };

@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import { injectGlobal } from "styled-components";
 import { Div, H1, P } from "./index";
 
 // Arrays can be used for responsive styles
@@ -12,6 +13,15 @@ const styles = {
 };
 
 const App = () => {
+  injectGlobal`
+    body {
+      margin: 0;
+      font-family: Arial;
+      font-size: 16px;
+      color: black;
+      background: white;
+    }
+  `;
   return (
     <Div {...styles}>
       <H1>Welcome to My Revival App!</H1>
